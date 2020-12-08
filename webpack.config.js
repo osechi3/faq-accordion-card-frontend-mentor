@@ -55,14 +55,14 @@ module.exports = {
     new EslintWebpackPlugin(),
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
 
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: 'src/assets/images',
-    //       to: path.resolve(__dirname, 'dist/assets/images')
-    //     }
-    //   ]
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images',
+          to: path.resolve(__dirname, 'dist/assets/images')
+        }
+      ]
+    }),
 
     new ImageminWebpPlugin({
       config: [{
