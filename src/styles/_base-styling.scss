@@ -1,9 +1,39 @@
+@use 'variables' as v;
+
+@font-face {
+  font-weight: bold;
+  font-family: KumbhSans-Bold;
+  src:
+    local("KumbhSans-Bold"),
+    url("../assets/fonts/KumbhSans-Bold.ttf");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: KumbhSans-Regular;
+  src:
+    local("KumbhSans-Bold"),
+    url("../assets/fonts/KumbhSans-Regular.ttf");
+}
+
 html {
   box-sizing: border-box;
+
+  font-size: 12px;
+  font-family: v.$regular-stack;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
 }
