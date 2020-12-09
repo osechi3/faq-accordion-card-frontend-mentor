@@ -1,1 +1,99 @@
+@use 'variables' as v;
 @use 'base-styling';
+@use 'code-mentor';
+
+.faq {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 87vw;
+  padding: 138px 25px 47px 25px;
+
+  font-size: 1.08rem;
+
+  background-color: #fff;
+  border: 1px transparent;
+  border-radius: 23px;
+
+  .faq__img {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+
+    flex: 1;
+
+    transform: translateX(-50%);
+  }
+
+  .faq__img-shadow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    flex: 1;
+
+    transform: translateX(-50%);
+  }
+
+  .faq__header {
+    margin-bottom: 15px;
+
+    color: v.$primary-text-blue;
+    font-size: 1.8rem;
+    font-family: v.$bold-stack;
+    text-transform: uppercase;
+  }
+
+  .faq__heading { margin: 0; }
+
+  .faq__main-section { width: 100%; }
+
+  .faq__point {
+    display: flex;
+    align-items: center;
+    padding: 18.5px 0;
+
+    color: v.$neutral-text-dark-blue;
+
+    border-bottom: 1px solid v.$divider-blue;
+
+    &[open] {
+      color: v.$primary-text-blue;
+      font-family: v.$bold-stack;
+    }
+
+    &[open] .faq__chevron-icon { transform: rotate(180deg); }
+  }
+
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.088rem;
+
+    list-style-type: none;
+    cursor: pointer;
+
+    // For Chrome
+    &::-webkit-details-marker { display: none; }
+
+    &:hover { color: v.$primary-text-red; }
+
+    &:focus { outline: none; }
+  }
+
+  .faq__answer {
+    width: 87%;
+    margin: 0;
+    margin-top: 12px;
+
+    color: v.$neutral-text-blue;
+    font-size: 1rem;
+    font-family: v.$regular-stack;
+    line-height: 1.5;
+  }
+} // end .faq
