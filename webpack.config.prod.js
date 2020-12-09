@@ -21,7 +21,7 @@ module.exports = {
 
     /* name of the repo (if deploying to gh-pages) ('/repo-name/')
       or '/' (if deploying to firebase) */
-    publicPath: '/'
+    publicPath: '/faq-accordion-card-frontend-mentor/'
   },
 
   devServer: {
@@ -33,10 +33,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'sass-loader'
         ]
       },
 
@@ -46,6 +47,11 @@ module.exports = {
         use: [
           'babel-loader'
         ]
+      },
+
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader'
       }
     ]
   },
@@ -64,28 +70,28 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/assets/images')
         }
       ]
-    }),
-
-    new ImageminWebpPlugin({
-      config: [{
-        test: /\.(jpe?g|png)/,
-        options: {
-          quality: 60
-        }
-      }]
-    }),
-
-    new ImageminPlugin({
-      jpegtran: null,
-      gifsicle: null,
-      optipng: null,
-
-      plugins: [
-        imageminMozjpeg({
-          quality: 75,
-          progressive: true
-        })
-      ]
     })
+
+    // new ImageminWebpPlugin({
+    //   config: [{
+    //     test: /\.(jpe?g|png)/,
+    //     options: {
+    //       quality: 60
+    //     }
+    //   }]
+    // }),
+
+    // new ImageminPlugin({
+    //   jpegtran: null,
+    //   gifsicle: null,
+    //   optipng: null,
+
+    //   plugins: [
+    //     imageminMozjpeg({
+    //       quality: 75,
+    //       progressive: true
+    //     })
+    //   ]
+    // })
   ]
 }

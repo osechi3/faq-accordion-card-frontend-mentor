@@ -62,16 +62,16 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/assets/images')
         }
       ]
-    }),
+    })
 
-    new ImageminWebpPlugin({
-      config: [{
-        test: /\.(jpe?g|png)/,
-        options: {
-          quality: 80
-        }
-      }]
-    }),
+    // new ImageminWebpPlugin({
+    //   config: [{
+    //     test: /\.(jpe?g|png)/,
+    //     options: {
+    //       quality: 80
+    //     }
+    //   }]
+    // }),
 
     // new ImageminPlugin({
     //   jpegtran: null,
